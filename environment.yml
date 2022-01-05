@@ -1,0 +1,15 @@
+name: RICM_lib
+
+channels:
+    - conda-forge
+
+dependencies:
+    - python>=3.8
+    - pip
+    - numpy
+    - scipy
+    - scikit-image
+    - matplotlib-base
+    - joblib
+    - pystackreg
+    - tensorflow
