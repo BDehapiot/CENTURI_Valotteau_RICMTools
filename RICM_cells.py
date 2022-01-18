@@ -17,6 +17,8 @@ from tensorflow.keras.losses import binary_crossentropy
 
 #%%
 
+print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
+
 #%% Parameters
 
 ''' 1) Open data '''
@@ -32,8 +34,6 @@ MASK_NAME = RAW_NAME[0:-4] + '_mask.tif'
 # Open data
 raw = io.imread(ROOT_PATH + RAW_NAME) 
 mask = io.imread(ROOT_PATH + MASK_NAME) 
-
-stop
 
 #%%
 
@@ -165,4 +165,4 @@ unet.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 raw = raw.reshape((raw.shape[0], raw.shape[1], raw.shape[2], 1)) 
 mask = mask.reshape((mask.shape[0], mask.shape[1], mask.shape[2], 1)) 
 
-results = unet.fit(raw, mask, validation_split=0.1, batch_size=16, epochs=100)
+results = unet.fit(raw, mask, validation_split=0.1, batch_size=16, epochs=10)

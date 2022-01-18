@@ -2,6 +2,7 @@ name: RICM_lib
 
 channels:
     - conda-forge
+    - esri
 
 dependencies:
     - python>=3.8
@@ -12,4 +13,8 @@ dependencies:
     - matplotlib-base
     - joblib
     - pystackreg
-    - tensorflow
+    - tensorflow-gpu
+    - pip:
+        - spyder
+    
+    
